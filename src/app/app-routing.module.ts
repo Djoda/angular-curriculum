@@ -5,6 +5,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AcademicComponent } from './components/academic/academic.component';
 import { ProfessionalComponent } from './components/professional/professional.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { CursosSeminariosComponent } from './components/cursos-seminarios/cursos-seminarios.component';
   import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -12,8 +13,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'academic', component: AcademicComponent},
   { path: 'professional', component: ProfessionalComponent},
-  { path: 'portfolio', component: PortfolioComponent}
-
+  { path: 'portfolio', component: PortfolioComponent},
+  { path: 'courses', component: CursosSeminariosComponent}
 ];
 
 @NgModule({
