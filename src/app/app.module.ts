@@ -17,6 +17,7 @@ import { ProfessionalListComponent } from './components/professional-list/profes
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PortfolioListComponent } from './components/portfolio-list/portfolio-list.component';
 import { CursosSeminariosComponent } from './components/cursos-seminarios/cursos-seminarios.component';
+import { CoursesListComponent } from './components/courses-list/courses-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CursosSeminariosComponent } from './components/cursos-seminarios/cursos
     ProfessionalListComponent,
     PortfolioComponent,
     PortfolioListComponent,
-    CursosSeminariosComponent
+    CursosSeminariosComponent,
+    CoursesListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Institucion</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Carga Horaria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of lista; let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{course.institucion}}</td>
+        <td>{{course.nombre}}</td>
+        <td>{{course.fecha}}</td>
+        <td>{{course.cargaHoraria}}</td>
+      </tr>    
+    </tbody>
+  </table>
