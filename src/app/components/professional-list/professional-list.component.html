@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Institucion</th>
+      <th scope="col">Inicio</th>
+      <th scope="col">Fin</th>
+      <th scope="col">Funcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let experiencia of lista; let i = index">
+      <th scope="row">{{i}}</th>
+      <td>{{experiencia.institucion}}</td>
+      <td>{{experiencia.fechaInicio}}</td>
+      <td>{{experiencia.fechaFin}}</td>
+      <td>{{experiencia.funcion}}</td>
+    </tr>    
+  </tbody>
+</table>

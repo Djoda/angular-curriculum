@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AcademicComponent } from './components/academic/academic.component';
 import { AcademicListComponent } from './components/academic-list/academic-list.component';
 import { ProfessionalComponent } from './components/professional/professional.component';
+import { ProfessionalListComponent } from './components/professional-list/professional-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProfessionalComponent } from './components/professional/professional.co
     ProfileComponent,
     AcademicComponent,
     AcademicListComponent,
-    ProfessionalComponent
+    ProfessionalComponent,
+    ProfessionalListComponent
   ],
   imports: [
     BrowserModule,
