@@ -11,6 +11,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AcademicComponent } from './components/academic/academic.component';
+import { AcademicListComponent } from './components/academic-list/academic-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AcademicComponent } from './components/academic/academic.component';
     SidebarComponent,
     NavbarComponent,
     ProfileComponent,
-    AcademicComponent
+    AcademicComponent,
+    AcademicListComponent
   ],
   imports: [
     BrowserModule,

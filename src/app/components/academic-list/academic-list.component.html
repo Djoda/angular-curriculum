@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Universidad</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Grado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let academic of lista; let i = index">
+      <th scope="row">{{i}}</th>
+      <td>{{academic.universidad}}</td>
+      <td>{{academic.titulo}}</td>
+      <td>{{academic.fecha}}</td>
+      <td>{{academic.grado}}</td>
+    </tr>    
+  </tbody>
+</table>
+
