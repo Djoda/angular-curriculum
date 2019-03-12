@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 

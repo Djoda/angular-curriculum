@@ -23,7 +23,7 @@ export class AuthService {
   async login(email: string, password: string){
     try{
       await this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      this.router.navigate(['admin/list']);       
+      this.router.navigate(['profile']);       
     }catch(e){
       alert("Error!" + e.message);
     }
@@ -32,7 +32,21 @@ export class AuthService {
   async logout(){
     await this.afAuth.auth.signOut();
     localStorage.removeItem('user');
-    this.router.navigate(['admin/login']);
+    this.router.navigate(['login']);
+  }
+
+  async signUp(email: string, password: string){
+    await this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    .then((result) => {
+      /* Call the SendVerificaitonMail() function when new user sign 
+      up and returns promise */
+      console.log('Usuario creado correctamente');
+      this.router.navigate(['login']);
+      // this.SendVerificationMail();
+      // this.SetUserData(result.user);
+    }).catch((error) => {
+      window.alert(error.message)
+    })
   }
 
   get isLoggedIn(): boolean {

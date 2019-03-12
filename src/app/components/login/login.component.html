@@ -1,7 +1,7 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<!-- <form class="login100-form validate-form"> -->
 					<span class="login100-form-title p-b-70">
 						Welcome
 					</span>
@@ -10,17 +10,17 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
-						<input class="input100" type="text" name="username">
+						<input class="input100" type="text" #userEmail required autofocus>
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" #userPassword required>
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" (click)="authService.login(userEmail.value,userPassword.value)">
 							Login
 						</button>
 					</div>
@@ -41,12 +41,12 @@
 								Don’t have an account?
 							</span>
 
-							<a href="#" class="txt2">
+							<a class="txt2" routerLink="../register">
 								Sign up
 							</a>
 						</li>
 					</ul>
-				</form>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
