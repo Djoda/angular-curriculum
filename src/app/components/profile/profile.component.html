@@ -1,25 +1,25 @@
 <div class="container">
   <h2 class="center">Informacion Personal</h2>
-    <form>
+    <form (ngSubmit)="addProfile()">
         <div class="row">
           <div class="col-6">
             <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name">
+              <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name" [(ngModel)]="profile.name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Your lastname">
+              <input name="lastName" [(ngModel)]="profile.lastName" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Your lastname">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="your email">
+              <input name="email" [(ngModel)]="profile.email" type="text" class="form-control" id="formGroupExampleInput" placeholder="your email">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Your phone number">
+              <input name="phone" [(ngModel)]="profile.phone" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Your phone number">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control col-5" id="formGroupExampleInput" placeholder="Your ID">
+              <input name="ci" [(ngModel)]="profile.ci" type="text" class="form-control col-5" id="formGroupExampleInput" placeholder="Your ID">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control col-5" id="formGroupExampleInput" placeholder="Your birthday">
+              <input name="birthday" [(ngModel)]="profile.birthday" type="text" class="form-control col-5" id="formGroupExampleInput" placeholder="Your birthday">
             </div>
             <div class="form-group">
               <button type="button" class="btn btn-success">Guardar</button>
