@@ -21,17 +21,11 @@ export class ProfileService {
   profile: Observable<Profile[]>;
 
   constructor(private afs: AngularFirestore) {
-    this.profileCollection = afs.collection<Profile>('profiles');
-    this.profile = this.profileCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Profile;
-        const id = a.payload.doc.id;
-        return{id, ...data};
-      }))
-    );
+    this.profileCollection = afs.collection<Profile>('profile');
+    this.profile = this.profileCollection.valueChanges();
    }
 
-   addProfile(profile: Profile){
-     this.profileCollection.add(profile);
+   listaProfile(){
+     return this.profile;
    }
 }

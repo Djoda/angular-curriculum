@@ -29,6 +29,8 @@ import { CursosSeminariosComponent } from './components/cursos-seminarios/cursos
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { RegisterComponent } from './components/register/register.component';
 
+import { ProfileService } from './services/profile.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +60,7 @@ import { RegisterComponent } from './components/register/register.component';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

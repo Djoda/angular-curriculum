@@ -35,4 +35,9 @@
         </div>
         </form>
 </div>
-
+{{profiles}}
+<ul>
+  <li class="text" *ngFor="let item of profiles | async">
+    {{item.email}}
+  </li>
+</ul>

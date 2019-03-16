@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -8,23 +10,30 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  profile:any = {
-    name: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    ci: '',
-    birthday: ''
-  }
+  // profile:any = {
+  //   name: '',
+  //   lastName: '',
+  //   email: '',
+  //   phone: '',
+  //   ci: '',
+  //   birthday: ''
+  // }
 
-  constructor(private profileService: ProfileService ) { }
+  profiles: any;
+  constructor(db: AngularFirestore, private profileService: ProfileService ) {
+    //this.profile = db.collection('profile').valueChanges();
+    this.profileService.listaProfile().subscribe(profile => {
+      this.profiles = profile;
+      console.log(this.profiles);
+    })
+   }
 
   ngOnInit() {
   }
 
   addProfile(){
     console.log('AQUI -----------------');
-    this.profileService.addProfile(this.profile);    
+   // this.profileService.addProfile(this.profile);    
   }
 
 }
