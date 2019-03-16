@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export interface Profile { 
+export interface Profile {
   name: string;
   lastName: string;
   email: string;
@@ -17,15 +19,20 @@ export interface Profile {
 })
 
 export class ProfileService {
-  private profileCollection: AngularFirestoreCollection<Profile>;
-  profile: Observable<Profile[]>;
+  profile: Observable<any[]>;
 
-  constructor(private afs: AngularFirestore) {
-    this.profileCollection = afs.collection<Profile>('profile');
-    this.profile = this.profileCollection.valueChanges();
-   }
+  constructor(private firestore: AngularFirestore) { }
+  //  getProfiles(){
+  //    console.log("-------------------------------------------");
+  //   this.db.list('profile').valueChanges();
+  // }
 
-   listaProfile(){
-     return this.profile;
-   }
+  readProfiles(){
+    return this.firestore.collection('profile').snapshotChanges();
+  }
+
+  createProfile(record: Profile){
+    return this.firestore.collection('profile').add(record);
+  }
+
 }

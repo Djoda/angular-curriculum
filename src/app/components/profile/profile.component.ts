@@ -10,30 +10,39 @@ import { Observable } from 'rxjs';
 })
 export class ProfileComponent implements OnInit {
 
-  // profile:any = {
-  //   name: '',
-  //   lastName: '',
-  //   email: '',
-  //   phone: '',
-  //   ci: '',
-  //   birthday: ''
-  // }
-
-  profiles: any;
-  constructor(db: AngularFirestore, private profileService: ProfileService ) {
-    //this.profile = db.collection('profile').valueChanges();
-    this.profileService.listaProfile().subscribe(profile => {
-      this.profiles = profile;
-      console.log(this.profiles);
-    })
+   profile:any = {
+     name: '',
+     lastName: '',
+     email: '',
+     phone: '',
+     ci: '',
+     birthday: ''
    }
 
+  profiles: any;
+  constructor(private profileService: ProfileService ) {
+
+  }
+
   ngOnInit() {
+    this.profileService.readProfiles().subscribe(data => {
+      this.profiles = data.map(e => {
+        return {
+          id: e.payload.doc.id,
+          name: e.payload.doc.data()['name'],
+          lastName: e.payload.doc.data()['lastName'],
+          email: e.payload.doc.data()['email'],
+        };
+      })
+      console.log(this.profiles);
+    });
+
   }
 
   addProfile(){
-    console.log('AQUI -----------------');
-   // this.profileService.addProfile(this.profile);    
+    console.log(this.profile);
+    this.profileService.createProfile(this.profile);
+   // this.profileService.addProfile(this.profile);
   }
 
 }

@@ -7,22 +7,22 @@
               <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name" [(ngModel)]="profile.name">
             </div>
             <div class="form-group">
-              <input name="lastName" [(ngModel)]="profile.lastName" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Your lastname">
+              <input name="lastName" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Your lastname" [(ngModel)]="profile.lastName">
             </div>
             <div class="form-group">
-              <input name="email" [(ngModel)]="profile.email" type="text" class="form-control" id="formGroupExampleInput" placeholder="your email">
+              <input name="email" type="text" class="form-control" id="formGroupExampleInput3" placeholder="your email" [(ngModel)]="profile.email">
             </div>
             <div class="form-group">
-              <input name="phone" [(ngModel)]="profile.phone" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Your phone number">
+              <input name="phone" type="text" class="form-control" id="formGroupExampleInput4" placeholder="Your phone number" [(ngModel)]="profile.phone">
             </div>
             <div class="form-group">
-              <input name="ci" [(ngModel)]="profile.ci" type="text" class="form-control col-5" id="formGroupExampleInput" placeholder="Your ID">
+              <input name="ci" type="text" class="form-control col-5" id="formGroupExampleInput5" placeholder="Your ID" [(ngModel)]="profile.ci">
             </div>
             <div class="form-group">
-              <input name="birthday" [(ngModel)]="profile.birthday" type="text" class="form-control col-5" id="formGroupExampleInput" placeholder="Your birthday">
+              <input name="birthday" type="text" class="form-control col-5" id="formGroupExampleInput6" placeholder="Your birthday" [(ngModel)]="profile.birthday">
             </div>
             <div class="form-group">
-              <button type="button" class="btn btn-success">Guardar</button>
+              <button type="submit" class="btn btn-success">Guardar</button>
               <button type="button" class="btn btn-warning ml-3">Limpiar</button>
             </div>
 
@@ -35,9 +35,8 @@
         </div>
         </form>
 </div>
-{{profiles}}
 <ul>
-  <li class="text" *ngFor="let item of profiles | async">
-    {{item.email}}
+  <li class="text" *ngFor="let item of profiles">
+    {{item.email}} {{item.name}} {{item.lastName}}
   </li>
 </ul>
