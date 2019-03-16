@@ -9,13 +9,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let academic of lista; let i = index">
-      <th scope="row">{{i}}</th>
-      <td>{{academic.universidad}}</td>
+    <tr *ngFor="let academic of academics; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{academic.institucion}}</td>
       <td>{{academic.titulo}}</td>
       <td>{{academic.fecha}}</td>
       <td>{{academic.grado}}</td>
-    </tr>    
+    </tr>
   </tbody>
 </table>
 

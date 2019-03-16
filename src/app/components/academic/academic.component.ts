@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AcademicService } from 'src/app/services/academic.service';
 
 @Component({
   selector: 'app-academic',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcademicComponent implements OnInit {
 
-  constructor() { }
+  academic:any = {
+    institucion: '',
+    titulo: '',
+    fecha: '',
+    grado: ''
+  }
+
+  constructor(private academicService: AcademicService) { }
 
   ngOnInit() {
+
+  }
+
+  addAcademic(){
+    console.log(this.academic);
+    this.academicService.createAcademic(this.academic);
+   // this.profileService.addProfile(this.profile);
   }
 
 }

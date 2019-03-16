@@ -30,6 +30,7 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
 import { RegisterComponent } from './components/register/register.component';
 
 import { ProfileService } from './services/profile.service';
+import { AcademicService } from './services/academic.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { ProfileService } from './services/profile.service';
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AngularFireDatabaseModule
   ],
-  providers: [ProfileService],
+  providers: [ProfileService, AcademicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

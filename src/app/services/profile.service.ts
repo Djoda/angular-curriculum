@@ -20,8 +20,12 @@ export interface Profile {
 
 export class ProfileService {
   profile: Observable<any[]>;
-
-  constructor(private firestore: AngularFirestore) { }
+  userId: string;
+  constructor(private firestore: AngularFirestore, private afAuth: AngularFireAuth, private db: AngularFireDatabase) {
+    this.afAuth.authState.subscribe(user =>{
+      if(user) this.userId = user.uid
+    })
+   }
   //  getProfiles(){
   //    console.log("-------------------------------------------");
   //   this.db.list('profile').valueChanges();
@@ -33,6 +37,7 @@ export class ProfileService {
 
   createProfile(record: Profile){
     return this.firestore.collection('profile').add(record);
+    //this.db.list('profile').push(record);
   }
 
 }
