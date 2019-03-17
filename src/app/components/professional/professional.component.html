@@ -1,26 +1,26 @@
 <div class="container">
   <h2 class="center">Formacion profesional</h2>
-    <form>
+    <form (ngSubmit)="addAcademic()">
         <div class="row">
           <div class="col-6">
             <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Institutcion">
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Institutcion" [(ngModel)]="profesional.institucion" name="institucion">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Fecha de Inicio">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Fecha de Inicio" [(ngModel)]="profesional.fechaInicio" name="fechaInicio">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Fecha de Finalizacion">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Fecha de Finalizacion" [(ngModel)]="profesional.fechaFin" name="fechaFin">
             </div>                        
             <div class="form-group">
-              <button type="button" class="btn btn-success">Guardar</button>
+              <button type="submit" class="btn btn-success">Guardar</button>
               <button type="button" class="btn btn-warning ml-3">Limpiar</button>
             </div>
 
           </div>
           <div class="col-6">
             <div class="form-group">
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Funcion principal desearrollada"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Funcion principal desearrollada" [(ngModel)]="profesional.funcion" name="funcion"></textarea>
             </div>
           </div>
         </div>

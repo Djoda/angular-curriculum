@@ -9,8 +9,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let experiencia of lista; let i = index">
-      <th scope="row">{{i}}</th>
+    <tr *ngFor="let experiencia of experiencias; let i = index">
+      <th scope="row">{{i+1}}</th>
       <td>{{experiencia.institucion}}</td>
       <td>{{experiencia.fechaInicio}}</td>
       <td>{{experiencia.fechaFin}}</td>

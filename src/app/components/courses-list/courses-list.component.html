@@ -9,8 +9,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let course of lista; let i = index">
-        <th scope="row">{{i}}</th>
+      <tr *ngFor="let course of courses; let i = index">
+        <th scope="row">{{i+1}}</th>
         <td>{{course.institucion}}</td>
         <td>{{course.nombre}}</td>
         <td>{{course.fecha}}</td>
